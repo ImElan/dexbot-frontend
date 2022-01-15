@@ -1,0 +1,160 @@
+.individualWorkShop {
+	grid-column: center-start / center-end;
+	padding: 8rem;
+	display: grid;
+	grid-template-rows: repeat(4, min-content);
+
+	@include respond(tab-port) {
+		padding: 4rem;
+		margin-top: 8rem;
+	}
+
+	@include respond(phone-land) {
+		padding: 2rem;
+	}
+
+	@include respond(phone) {
+		grid-column: full-start / full-end;
+	}
+
+	&__agendaContainer,
+	&__requirementContainer,
+	&__detailsContainer {
+		display: grid;
+		row-gap: 2rem;
+		background-color: #edf2f7;
+		padding: 2rem;
+		padding-top: 6rem;
+		border-radius: 2rem;
+	}
+
+	&__agendas,
+	&__requirements,
+	&__details {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+		row-gap: 0.5rem;
+		column-gap: 5rem;
+		padding: 4rem;
+
+		@include respond(tab-port) {
+			padding: 2.5rem;
+		}
+
+		@include respond(phone-land) {
+			padding: 1.5rem;
+		}
+	}
+
+	&__singleAgenda,
+	&__singleRequirement,
+	&__singleDetail {
+		display: grid;
+		grid-template-columns: min-content 1fr;
+		column-gap: 2rem;
+		padding: 1rem 3rem;
+
+		@include respond(phone-land) {
+			padding: 1rem 1.5rem;
+		}
+	}
+
+	&__singleAgenda,
+	&__singleRequirement {
+		align-items: start;
+	}
+
+	&__singleDetail {
+		align-items: center;
+	}
+
+	&__tickSvg,
+	&__chevronSvg {
+		height: 3rem;
+		width: 3rem;
+		fill: $color-primary-dark;
+	}
+
+	&__detailsSvg {
+		height: 4rem;
+		width: 4rem;
+	}
+
+	&__agenda,
+	&__requirement,
+	&__detail {
+		font-size: 2rem;
+		font-weight: 400;
+		line-height: 1.3;
+		color: $color-grey-dark;
+	}
+
+	&__button {
+		&,
+		&:active,
+		&:focus {
+			justify-self: center;
+			align-self: center;
+			border-radius: 4px;
+			border: 2px solid $color-primary;
+			color: $color-primary-dark;
+			background-color: $color-white;
+			position: relative;
+			transition: all 0.2s;
+			z-index: 10;
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+		}
+
+		@include respond(phone-land) {
+			margin-bottom: 1.5rem;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: -5;
+			background-color: $color-primary;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 100%;
+			transition: right 0.3s;
+		}
+		&:hover {
+			color: $color-white;
+			&::after {
+				right: 0;
+			}
+
+			.individualWorkShop__bookNowSvg {
+				fill: $color-white;
+			}
+		}
+	}
+
+	&__bookNowSvg {
+		height: 3rem;
+		width: 3rem;
+		fill: $color-primary;
+		margin-right: 1.5rem;
+		transition: fill 0.3s;
+		pointer-events: none;
+	}
+
+	&__requirementContainer,
+	&__detailsContainer,
+	&__button {
+		margin-top: 6rem;
+
+		@include respond(tab-port) {
+			margin-top: 4rem;
+		}
+
+		@include respond(phone-land) {
+			margin-top: 2rem;
+		}
+	}
+}

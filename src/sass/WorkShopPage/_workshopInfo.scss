@@ -1,0 +1,364 @@
+.workshopInfoContainer {
+	grid-column: full-start / full-end;
+	display: grid;
+	padding: 6rem;
+	padding-top: 10rem;
+	grid-template-rows: repeat(2, min-content);
+
+	@include respond(tab-land) {
+		padding: 6rem;
+		padding-top: 3.5rem;
+	}
+
+	@include respond(tab-port) {
+		padding: 4rem;
+		padding-top: 2.5rem;
+	}
+
+	@include respond(phone) {
+		padding: 1rem;
+	}
+
+	&__heading {
+		display: grid;
+		row-gap: 1rem;
+		grid-template-columns: minmax(min-content, 70rem);
+		justify-self: center;
+	}
+
+	&__dots {
+		display: grid;
+		row-gap: 2rem;
+		justify-items: center;
+		margin-top: 2.5rem;
+	}
+
+	&__dot {
+		height: 1rem;
+		width: 1rem;
+		border-radius: 50%;
+		background-color: $color-grey-dark-2;
+	}
+
+	&__workshops {
+		padding: 6rem;
+		padding-top: 8rem;
+
+		@include respond(phone-land) {
+			padding: 3rem;
+			padding-top: 5rem;
+		}
+
+		@include respond(phone) {
+			padding: 1rem;
+			padding-top: 4rem;
+		}
+	}
+
+	&__singleInfoCard {
+		display: grid;
+		grid-template-rows: min-content;
+		grid-template-columns: repeat(2, 1fr);
+		padding: 8rem;
+		position: relative;
+		margin: 8rem 0;
+		border-radius: 2rem;
+
+		@include respond(tab-land) {
+			grid-template-rows: repeat(2, min-content);
+			grid-template-columns: 1fr;
+			background-image: none !important;
+			background-color: #e2e8f0;
+			overflow: hidden;
+		}
+
+		@include respond(tab-port) {
+			padding: 4rem;
+		}
+
+		@include respond(phone) {
+			padding: 0rem;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__name {
+		font-family: $font-display;
+		font-size: 2.6rem;
+		font-weight: 400;
+		background-color: $color-primary;
+		position: absolute;
+		color: $color-white;
+		padding: 0.8rem 5rem;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+		text-align: center;
+
+		@include respond(tab-land) {
+			left: 20%;
+			right: 20%;
+			transform: translateX(0);
+			font-size: 2.3rem;
+		}
+
+		@include respond(tab-port) {
+			left: 15%;
+			right: 15%;
+			font-size: 2.1rem;
+		}
+
+		@include respond(phone) {
+			left: 0;
+			right: 0;
+			border-radius: 0;
+			font-size: 1.9rem;
+		}
+	}
+
+	&__image {
+		grid-row: 1 / span 1;
+		width: 100%;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+
+		@include respond(tab-land) {
+			grid-row: 1 / span 1 !important;
+			grid-column: 1 / -1 !important;
+			padding: 4rem !important;
+			margin-top: 4rem;
+			background-color: #e2e8f0;
+		}
+
+		@include respond(tab-port) {
+			margin-top: 2rem;
+		}
+
+		@include respond(phone) {
+			margin-top: 7rem;
+		}
+
+		&--img {
+			@include respond(desktop-medium) {
+				width: 100% !important;
+			}
+		}
+	}
+
+	&__content {
+		grid-row: 1 / span 1;
+		display: grid;
+		padding-top: 2rem;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		grid-template-rows: repeat(3, min-content);
+		row-gap: 2rem;
+		margin-top: 2.5rem;
+
+		@include respond(tab-land) {
+			grid-row: 2 / span 1 !important;
+			grid-column: 1 / -1 !important;
+			padding: 5rem !important;
+			margin-top: 4rem;
+			background-color: #edf2f7;
+			border-radius: 2rem;
+		}
+
+		@include respond(phone) {
+			border-radius: 0;
+		}
+	}
+
+	&__about {
+		font-family: $font-primary;
+		text-align: justify;
+		font-size: 2.2rem;
+		line-height: 1.4;
+		color: $color-grey-dark-3;
+		font-weight: 400;
+
+		@include respond(desktop-small) {
+			font-size: 2rem;
+		}
+	}
+
+	&__details {
+		display: grid;
+		align-items: center;
+		row-gap: 2rem;
+
+		@include respond(desktop-medium) {
+			grid-template-columns: repeat(2, 1fr);
+			row-gap: 1rem;
+			margin-top: 2rem;
+		}
+
+		@include respond(tab-land) {
+			grid-template-columns: 1fr;
+			margin-top: 0rem;
+		}
+
+		@include respond(tab-port) {
+			grid-template-columns: repeat(2, 1fr);
+			row-gap: 1rem;
+			margin-top: 2rem;
+		}
+	}
+
+	&__detailsContainer {
+		display: grid;
+		grid-template-columns: min-content 1fr;
+		padding: 1rem 0;
+		align-items: center;
+	}
+
+	&__detailsImage {
+		height: 4rem;
+		width: 4rem;
+		margin-right: 1.5rem;
+	}
+
+	&__detailsDetail {
+		font-family: $font-primary;
+		font-size: 2rem;
+		color: $color-primary;
+		font-weight: 600;
+
+		@include respond(desktop-small) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__buttons {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2.5rem;
+		justify-self: center;
+		margin-top: 1rem;
+
+		@include respond(desktop-medium) {
+			width: 100% !important;
+			margin-top: 2rem;
+		}
+
+		@include respond(desktop-small) {
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: 1fr;
+			row-gap: 2rem;
+		}
+
+		@include respond(tab-land) {
+			grid-template-rows: min-content;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include respond(tab-port) {
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: 1fr;
+			row-gap: 2rem;
+		}
+	}
+
+	&__button {
+		justify-self: start;
+		border-radius: 4px;
+		transition: all 0.2s;
+		width: 100%;
+		text-align: center;
+
+		&--moreDetails {
+			background-color: $color-secondary;
+			grid-column: 1 / span 1;
+			text-decoration: none;
+
+			@include respond(desktop-small) {
+				grid-column: 1 / -1;
+				grid-row: 1 / span 1;
+				justify-self: center;
+			}
+
+			@include respond(tab-land) {
+				grid-column: 1 / span 1;
+				grid-row: 1 / span 1;
+			}
+
+			@include respond(tab-port) {
+				grid-column: 1 / -1;
+				grid-row: 1 / span 1;
+				justify-self: center;
+			}
+
+			&:hover {
+				background-color: $color-secondary-dark;
+			}
+		}
+
+		&--bookNow {
+			background-color: $color-primary;
+			grid-column: 2 / span 1;
+			text-decoration: none;
+
+			@include respond(desktop-small) {
+				grid-column: 1 / -1;
+				grid-row: 2 / span 1;
+				justify-self: center;
+			}
+
+			@include respond(tab-land) {
+				grid-column: 2 / span 1;
+				grid-row: 1 / span 1;
+			}
+
+			@include respond(tab-port) {
+				grid-column: 1 / -1;
+				grid-row: 2 / span 1;
+				justify-self: center;
+			}
+
+			&:hover {
+				background-color: $color-primary-dark;
+			}
+		}
+	}
+
+	// =====> Alternate Button <==========
+	/* &__button {
+            justify-self: start;
+            border-radius: 4px;
+            border: 2px solid $color-secondary;
+            color: $color-secondary-dark;
+            background-color: rgba(#ffb700,0.25);
+            position: relative;
+            transition: all 0.2s;
+            z-index: 10;
+
+            &::after {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  z-index: -5;
+                  background-color: $color-secondary;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 100%;
+                  transition: right 0.3s;
+            }
+            &:hover {
+                  color: $color-white;
+                  &::after {
+                        right: 0;
+                  }
+            }
+      } */
+}

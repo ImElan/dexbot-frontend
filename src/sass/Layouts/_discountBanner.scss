@@ -1,0 +1,17 @@
+.discountBanner {
+	padding: 1.5rem;
+
+	&__title {
+		padding: 1rem 0;
+	}
+
+	&__subtitle {
+		padding: 0 0 1rem 0;
+	}
+
+	&__list {
+		&--item {
+			padding: 1rem 0;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+@import './Base/mixins';
+@import './Base/base';
+@import './Base/typography';
+
+@import './Layouts/footer';
+@import './Layouts/header';
+@import './Layouts/navbar';
+@import './Layouts/discountBanner';
+
+@import './HomePage/banner';
+@import './HomePage/events';
+@import './HomePage/features';
+@import './HomePage/feedbacks';
+@import './HomePage/frequentlyAskedQuestions';
+@import './HomePage/sponsors';
+@import './HomePage/workshops';
+
+@import './WorkShopPage/workshopInfo';
+
+@import './EventsPage/techNonTech';
+
+@import './IndividualWorkShopPage/individualWorkShop';
+
+@import './IndividualEventPage/individualEvent';
+
+@import './RegisterPage/register';
+
+@import './ContactPage/contactPage';
+
+@import './AccomodationPage/accomodation';
+
+@import './PageNotFound/pageNotFound';

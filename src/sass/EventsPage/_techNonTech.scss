@@ -1,0 +1,92 @@
+.techNonTechEvents {
+      grid-column: full-start / full-end;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      column-gap: 7rem;
+      padding: 10rem;
+
+      @include respond(tab-land) {
+            padding: 5rem;
+            column-gap: 5rem;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2,min-content);
+            row-gap: 5rem;
+            padding: 4rem;
+      }
+
+      @include respond(tab-port) {
+            padding: 10rem 4rem;
+      }
+
+      &__nonTechImageContainer {
+            grid-column: 1 / span 1;
+            display: grid;
+            grid-template-rows: 1fr min-content;
+            row-gap: 4rem;
+            padding: 4rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+
+            @include respond(tab-land) {
+                  grid-column: 1 / -1;
+            }
+
+            &:hover {
+                  box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.2);
+                  border-radius: 4px;
+
+                  & .techNonTechEvents__heading {
+                        color: $color-primary;
+                        transform: scale(1.1);
+                  }
+            }
+      }
+
+      &__heading {
+            transition: all 0.2s;
+      
+            @include respond(phone-land) {
+                  font-size: 4.7rem;
+            }
+
+            @include respond(phone) {
+                  font-size: 4rem;
+            }
+      }
+
+      &__techImageContainer {
+            grid-column: 2 / span 1;
+            display: grid;
+            grid-template-rows: 1fr min-content;
+            row-gap: 4rem;
+            padding: 4rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+
+            @include respond(tab-land) {
+                  grid-column: 1 / -1;
+            }
+
+            &:hover {
+                  box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.2);
+                  border-radius: 0.7rem;
+
+                  & .techNonTechEvents__heading {
+                        color: $color-primary;
+                        transform: scale(1.1);
+                  }
+            }
+      }
+
+      &__nonTechImage {
+            width: 90%;
+            align-self: center;
+      }
+
+      &__techImage {
+            width: 90%;
+            align-self: center;
+      }
+}
